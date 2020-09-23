@@ -1,0 +1,41 @@
+USE [TreeView]
+GO
+
+/****** Object:  Table [dbo].[Example]    Script Date: 9/23/2020 7:57:55 PM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[Example](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[MenuNumber] [int] NOT NULL,
+	[ParentNumber] [int] NULL,
+	[MenuName] [varchar](50) NOT NULL,
+	[Uri] [varchar](50) NULL,
+	[Icon] [varchar](50) NOT NULL,
+ CONSTRAINT [PK_Menu] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+
+
+
+SET IDENTITY_INSERT [dbo].[Example] ON 
+
+INSERT [dbo].[Example] ([Id], [MenuNumber], [ParentNumber], [MenuName], [Uri], [Icon]) VALUES (1, 0, NULL, N'Tree', N'', N'glyphicon glyphicon-dashboard')
+INSERT [dbo].[Example] ([Id], [MenuNumber], [ParentNumber], [MenuName], [Uri], [Icon]) VALUES (2, 1000, 0, N'Kalit', N'dashboard', N'glyphicon glyphicon-user')
+INSERT [dbo].[Example] ([Id], [MenuNumber], [ParentNumber], [MenuName], [Uri], [Icon]) VALUES (3, 2000, 0, N'Ajay', N'', N'glyphicon glyphicon-user')
+INSERT [dbo].[Example] ([Id], [MenuNumber], [ParentNumber], [MenuName], [Uri], [Icon]) VALUES (4, 3000, 0, N'Priyanka', N'', N'glyphicon glyphicon-user')
+INSERT [dbo].[Example] ([Id], [MenuNumber], [ParentNumber], [MenuName], [Uri], [Icon]) VALUES (5, 2010, 1000, N'Sid', N'', N'glyphicon glyphicon-user')
+INSERT [dbo].[Example] ([Id], [MenuNumber], [ParentNumber], [MenuName], [Uri], [Icon]) VALUES (6, 2020, 2000, N'Rohit', N'user/myfile', N'glyphicon glyphicon-user')
+INSERT [dbo].[Example] ([Id], [MenuNumber], [ParentNumber], [MenuName], [Uri], [Icon]) VALUES (7, 2021, 2020, N'IphoneX', N'user/myfile/document', N'glyphicon glyphicon-phone')
+INSERT [dbo].[Example] ([Id], [MenuNumber], [ParentNumber], [MenuName], [Uri], [Icon]) VALUES (8, 2022, 2010, N'Jeans', N'user/myfile/music', N'glyphicon glyphicon-cloth')
+INSERT [dbo].[Example] ([Id], [MenuNumber], [ParentNumber], [MenuName], [Uri], [Icon]) VALUES (9, 3010, 3000, N'Lavish', N'setting/general', N'glyphicon glyphicon-user')
+INSERT [dbo].[Example] ([Id], [MenuNumber], [ParentNumber], [MenuName], [Uri], [Icon]) VALUES (10, 3020, 3000, N'Dharamendra', N'setting/privacy', N'glyphicon glyphicon-user')
+INSERT [dbo].[Example] ([Id], [MenuNumber], [ParentNumber], [MenuName], [Uri], [Icon]) VALUES (11, 3030, 3020, N'Laptop', N'setting/privacy', N'glyphicon glyphicon-laptop')
+SET IDENTITY_INSERT [dbo].[Example] OFF
